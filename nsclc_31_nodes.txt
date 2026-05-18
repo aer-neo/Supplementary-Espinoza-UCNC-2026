@@ -1,0 +1,32 @@
+targets,factors
+ATM,DNA_Damage & (!HDAC1 | !Wip1 | E2F1 | !BMI1)
+p38MAPK,ATM & !Wip1
+miR_145,p53 & !MALAT1 & !BMI1
+Sp1,(BMI1 & Myc) | !miR_145
+MALAT1,Sp1
+BMI1,Myc | E2F1
+KLF4,!miR_145 | (E2F1 & !HDAC1 & p53)
+HDAC1,!Sirt_1 & !DNA_Damage
+Myc,(E2F1 | p38MAPK | !p21) & !RB & !miR_145
+p53,(ATM & !KLF4) | (!Mdm2 & p38MAPK & !HDAC1 & !MALAT1)
+Mdm2,(!Wip1 | p53) & !ATM & !miR_145
+p53_A,!Sirt_1 & !p53_K &  (p53 | !p53_INP1)
+p53_K,!p53_A & (!Sirt_1 | !Wip1) & p53
+Sirt_1,E2F1 & !miR_145 & !HDAC1
+p53_INP1,p53_A | p53_K
+Wip1,p53_A  & !miR_145
+p21,p53_A | ((!HDAC1 & !Myc) & !BMI1 & !Caspase3 & p38MAPK)
+Cdc25A,!ATM & !p38MAPK
+CDK46_CycD,Cdc25A & !miR_145 & !p21
+CDK2_CycE,Cdc25A & E2F1 & !p21
+RB,!CDK46_CycD & !CDK2_CycE
+PUMA,p53_K
+BCL2,!PUMA & !miR_145
+BAX,(!BCL2 | !KLF4) & !p53_K
+E2F1,(!RB & ((Cdc25A & ATM) | !Sirt_1)) | MALAT1 | Myc
+Caspase3,(!BCL2 | !p21) & BAX
+DNA_Damage,DNA_Damage
+Proliferation,CDK2_CycE & !p53
+Drug_Resistance,MALAT1 & RB
+Senescence,p21 & !CDK2_CycE
+Apoptosis,Caspase3

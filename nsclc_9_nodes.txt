@@ -1,0 +1,10 @@
+targets,factors
+miR_145,p53 & !MALAT1 & !BMI1
+Sp1,(BMI1) | !miR_145
+MALAT1,Sp1
+BMI1,E2F1
+KLF4,!miR_145 | (E2F1 & p53)
+p53,!KLF4 | !MALAT1
+p53_A,!p53_K & p53
+p53_K,!p53_A & p53
+E2F1,MALAT1
