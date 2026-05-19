@@ -525,17 +525,3 @@ Also cite the original NSCLC Boolean model reconstructed in the manuscript:
   year    = {2024}
 }
 ```
-
----
-
-## Minimal reviewer checklist
-
-Before submitting the revision or archiving the repository, verify that:
-
-- [ ] All `nsclc_*.txt` rule files listed in this README are present in the repository.
-- [ ] The three Colab links above open the correct notebook versions.
-- [ ] `Rscript Simulation_synchrone.R` runs with `genes_ON <- c()` and `genes_OFF <- c()` for each relevant `nsclc_*.txt` file.
-- [ ] `Different_Asynchronous_Update_Scheme_Tools.ipynb` reproduces 10,632 classes for `nsclc_9_nodes.txt` and 23,107 classes for `nsclc_9_nodes_fit.txt`.
-- [ ] `Fitting_Boolean_Rules_in_GNR.ipynb` reproduces the candidate-rule table and the selected BMI1 rule.
-- [ ] `Graph_NSCLC_Network.ipynb` exports the PNG/SVG network figures and the 9-node basin map.
-- [ ] All generated CSV/PNG/SVG/HTML/ZIP outputs needed for the paper are either committed, archived, or listed with instructions to regenerate them.
